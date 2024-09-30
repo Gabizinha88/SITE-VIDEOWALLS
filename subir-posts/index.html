@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Post</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/img/LOGO ANIMADA 1.png" type="image/png">
+</head>
+<body>
+    <!-- Botão para alternar o modo -->
+    <button id="toggleMode" class="botao-modo">Modo Escuro</button>
+ 
+    <!-- Adiciona a logo no canto superior esquerdo -->
+    <div class="logo">
+        <a href="https://co.labbs.com.br/" target="_blank">
+        <img src="/img/LOGO ANIMADA 1.png" alt="Logo">
+        </a>
+    </div>
+ 
+    <div class="container">
+        <!-- Seção de formulário movida para a esquerda -->
+        <div class="left">
+            <div class="card">
+                <h1>Suba seus Posts</h1>
+                <form id="postForm">
+                    <!-- Campo para o título do post -->
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" name="title" required><br><br>
+                   
+                    <!-- Campo para upload de imagens -->
+                    <label for="image">Subir Imagens/GIFs</label>
+                    <input type="file" id="image" name="image" accept="image/*" multiple><br><br>
+                   
+                    <!-- Campo para o conteúdo do post -->
+                    <label for="content">Texto:</label>
+                    <textarea id="content" name="content" required class="txt-post"></textarea><br><br>
+                   
+                    <!-- Botão para subir o post -->
+                    <button type="submit" class="botao-subir">Subir Posts</button>
+                    <!-- Link para exibir posts -->
+                    <a href="/exibir-posts/posts.html" class="botao" target="_blank">Visualize</a>
+                </form>
+            </div>
+        </div>
+        <!-- Seção de posts existentes movida para a direita -->
+        <div class="right">
+            <div class="card">
+                <h2>Posts Existentes</h2>
+                <!-- Lista de posts existentes -->
+                <ul id="postList"></ul>
+            </div>
+        </div>
+    </div>
+    <h2 class="direito">CRIADO POR Felipe Monteiro Silveira e Gabriela </h2>
+ 
+    <!-- Modal para edição de posts -->
+    <div id="editModal" style="display:none;">
+        <h2>Editar Post</h2>
+        <form id="editForm">
+            <label for="editTitle">Título:</label>
+            <input type="text" id="editTitle" name="editTitle" required><br><br>
+           
+            <label for="editImage" class="btn-upload">Subir Imagens/GIFs</label>
+            <input type="file" id="image" name="image" accept="image/*" multiple>
+   
+            <label for="editContent">Texto:</label>
+            <textarea id="editContent" name="editContent" required class="input-edit"></textarea><br><br>
+           
+            <button type="submit" class="btn-salvar-edicao">Salvar Alterações</button>
+            <button type="button" onclick="closeEditModal()" class="btn-fechar-edicao">Fechar</button>
+        </form>
+    </div>
+   
+ 
+    <!-- Inclusão do script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

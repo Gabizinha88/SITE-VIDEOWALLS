@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Evita barras de rolagem */
+    font-family: 'BancodoBrasil Titulos', sans-serif;
+}
+
+.containerproje {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Evita barras de rolagem */
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out; /* Adiciona transição de movimento */
+}
+
+.slide-container.active {
+    display: block;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 100px 1%; /* Mantém o padding original */
+    padding-bottom: 50px; /* Mantém o padding original, jogar a caixa de texto pra baixo*/ 
+}
+
+.carousel-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    animation: fadeInOut 1s forwards; /* Ajustei a animação */
+}
+
+.carousel-content {
+    flex: 1 1 450px; /* Aumentei o tamanho flexível */
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1em;
+    box-sizing: border-box;
+    text-align: left;
+    animation: fadeInOut .4s linear .4s backwards;
+    border-radius: 15px; /* Adicionei bordas arredondadas */
+    margin-right: 20px; /* Adicionei margem à direita */
+    margin-top: auto; /* Ajustei a margem superior para auto */
+    align-self: flex-end; /* Alinha a caixa de texto ao final do container */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px); /* Transição semelhante à do texto */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.carousel-content h3 {
+    font-size: 2.5rem; /* Aumentei o tamanho da fonte */
+    color: #ffffff;
+    font-family: 'BancodoBrasil Titulos', sans-serif;
+    margin-top: px; /* Adicionei margem superior */
+    border-bottom: 2px solid white; /* Adicionei uma divisória branca */
+    padding-bottom: 10px; /* Adicionei padding inferior para espaçamento */
+}
+
+.carousel-content p {
+    font-size: 1.5rem; /* Aumentei o tamanho da fonte */
+    color: #ffffff;
+    font-family: 'BancoDoBrasil Textos', sans-serif;
+    width: 100%; /* Aumentei a largura do texto para 100% */
+    height: auto;
+    margin-top: 10px; /* Adicionei margem superior */
+    text-align: justify; /* Justifiquei o texto */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+@media(max-width: 500px) {
+    .carousel-content h3 {
+        background-color: red;
+        font-size: 30px; /* Ajustei o tamanho da fonte para dispositivos menores */
+        padding: 0.5rem 0.5rem;
+    }
+
+    .carousel-content p {
+        padding: 0.5rem 0.5rem;
+        font-size: 16px; /* Ajustei o tamanho da fonte para dispositivos menores */
+        width: 100%; /* Ajustei a largura do texto para 100% */
+        height: auto;
+        margin-top: 10px; /* Adicionei margem superior */
+        text-align: justify; /* Justifiquei o texto */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Estilos para os indicadores de slide */
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 30px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: white;
+}

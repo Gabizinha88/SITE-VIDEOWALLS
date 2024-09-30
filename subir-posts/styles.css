@@ -1,0 +1,333 @@
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh;
+    margin: 0;
+    background-image: url('/img/Capa Branca.png'); /* Imagem de fundo para o modo claro */
+    background-size: cover; /* Cobre toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Fixa a imagem de fundo */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    font-family: "BancodoBrasil Titulos";
+}
+ 
+/* Estilo para o modo escuro */
+body.dark-mode {
+    background-image: url('/img/Capa Preta.png'); /* Imagem de fundo para o modo escuro */
+    color: #ffffff;
+}
+ 
+/* Estilo para a logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.logo img {
+    width: 70px; /* Diminui o tamanho da logo */
+}
+ 
+/* Container principal */
+.container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    height: 80%; /* Ajusta a altura do container */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+}
+ 
+/* Estilo para o modo escuro */
+body.dark-mode .container {
+    background-color: rgba(18, 18, 18, 0.8); /* Fundo escuro semi-transparente */
+}
+ 
+/* Estilo para as seções esquerda e direita */
+.left, .right {
+    width: 45%;
+}
+ 
+/* Estilo para o card */
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    background-color: #fff; /* Fundo branco */
+}
+ 
+.txt-post{
+    height: 200px;
+}
+ 
+ 
+/* Estilo para o modo escuro */
+body.dark-mode .card {
+    background-color: #072739; /* Fundo escuro */
+    border-color: #072739; /* Borda escura */
+}
+ 
+/* Estilo para o formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Garante que o formulário ocupe toda a largura do card */
+}
+ 
+/* Estilo para inputs, textarea e botões */
+input, textarea, button {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 20px;
+}
+ 
+/* Estilo específico para inputs */
+input[type="text"], textarea {
+    border: none; /* Remove bordas padrão */
+    border-bottom: 2px solid #BDADF9; /* Adiciona linha roxa embaixo */
+    padding: 10px; /* Adiciona espaçamento interno */
+    outline: none; /* Remove o contorno ao focar */
+    background-color: #f0e6ff; /* Adiciona cor de fundo */
+}
+ 
+/* Estilo para o modo escuro */
+body.dark-mode input[type="text"], body.dark-mode textarea {
+    background-color: #444444; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+}
+ 
+/* Estilo para o botão */
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 130px; /* Diminui a largura do botão */
+    color: #fff;
+    background-color: #BDADF9;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 5px auto;
+    font-size: 16px;
+   
+}
+ 
+.botao-subir {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 150px; /* Diminui a largura do botão */
+    color: #fff;
+    background-color: #BDADF9;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 5px auto; /* Centraliza o botão e adiciona margem acima e abaixo */
+    font-size: 16px;
+    font-weight: bold;
+}
+ 
+/* Estilo para o botão de apagar */
+button.delete {
+    background-color: #BDADF9;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animação */
+}
+ 
+/* Estilo para o botão ao passar o mouse */
+.botao:hover {
+    background-color: #6D5CC2;
+    transform: scale(1.1); /* Animação de aumento */
+}
+ 
+.botao-subir:hover {
+    background-color: #6D5CC2;
+    transform: scale(1.1); /* Animação de aumento */
+}
+ 
+button.delete:hover {
+    background-color: #6D5CC2; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Animação de aumento */
+}
+ 
+/* Estilo para o input de arquivo */
+input[type="file"] {
+    display: none;
+}
+ 
+label[for="image"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #BDADF9;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 20px 190px; /* Adiciona margem acima e abaixo */
+    text-align: center;
+}
+ 
+label[for="image"]:hover {
+    background-color: #6D5CC2;
+    transform: scale(1.05);
+}
+ 
+.direito {
+    color: #ffffff;
+    position: absolute;
+    align-items: center;
+    margin-top: 350px;
+    opacity: 0.0;
+}
+ 
+/* Estilo para o botão de modo */
+.botao-modo {
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #BDADF9;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ 
+.botao-modo:hover {
+    background-color: #6D5CC2;
+}
+ 
+#editModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #BDADF9;
+    padding: 20px;
+    border: 1px solid #BDADF9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    width: 90%;
+    max-width: 800px;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    font-family: "BancodoBrasil Titulos";
+}
+ 
+/* Estilo para o modo escuro */
+body.dark-mode #editModal {
+    background-color: #072739; /* Fundo escuro */
+    border-color: #072739; /* Borda escura */
+}
+ 
+.input-edit {
+    height: 200px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+ 
+.txt-edit {
+    position: relative;
+    margin-right: 0;
+    width: 100%;
+    max-height: 200px;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+ 
+.btn-fechar-edicao, .btn-salvar-edicao{
+    font-family: "BancodoBrasil Titulos";
+    background-color: #6D5CC2;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animação */
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+ 
+button.edit{
+    background-color: #BDADF9;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animação */
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+ 
+ 
+.btn-fechar-edicao:hover, .btn-salvar-edicao:hover, button.edit:hover {
+    background-color: #a189fa; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Animação de aumento */
+}
+ 
+button.edit:hover {
+    background-color: #6D5CC2; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Animação de aumento */
+}
+ 
+ 
+#editModal h2 {
+    font-family: "BancodoBrasil Titulos";
+    margin-top: 0;
+    text-align: center;
+}
+ 
+/* Estilo para o botão de upload */
+.btn-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6D5CC2;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+ 
+.btn-upload:hover {
+    background-color: #a189fa;
+    transform: scale(1.05);
+}
+ 
+/* Media Queries para Responsividade */
+@media (min-width: 768px) {
+    #editModal {
+        font-family: "BancodoBrasil Titulos";
+        padding: 20px 40px;
+    }
+    .btn-fechar-edicao, .btn-salvar-edicao, button.edit, .btn-upload {
+        width: auto;
+        margin: 10px 5px;
+    }
+}
